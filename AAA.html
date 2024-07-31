@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プレゼント残り数</title>
   <style>
     body {
@@ -16,12 +17,36 @@
       justify-content: center;
       height: 100vh;
       text-align: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    h1, p {
+      margin: 0;
+      padding: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
     }
 
     iframe {
       display: block;
       margin: 20px auto;
-      max-width: 90%;
+      width: 100%;
+      max-width: 640px;
+      height: 800px;
+      border: none;
+    }
+
+    @media screen and (max-width: 640px) {
+      p {
+        font-size: 1em;
+      }
+
+      iframe {
+        height: 600px;
+      }
     }
   </style>
   <script>
@@ -32,6 +57,7 @@
         document.getElementById('remainingSlots').innerText = `残り ${remainingSlots} 個のプレゼントがあります！`;
       } catch (error) {
         console.error('Error fetching remaining slots:', error);
+        document.getElementById('remainingSlots').innerText = '残りのプレゼント数を取得できませんでした。';
       }
     }
 
@@ -41,8 +67,8 @@
 <body>
   <h1>プレゼント残り数</h1>
   <p id="remainingSlots">残りのプレゼント数を取得中...</p>
-  
+
   <!-- Googleフォームを埋め込みます -->
-  <iframe src="https://forms.gle/1Ugw3AL5Tj3ccj1V6" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
+  <iframe src="https://forms.gle/1Ugw3AL5Tj3ccj1V6"></iframe>
 </body>
 </html>
