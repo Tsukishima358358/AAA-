@@ -6,7 +6,7 @@
   <title>プレゼント残り数</title>
   <style>
     body {
-      background-image: url('https://drive.google.com/uc?export=view&id=11kGzR5Y9rjQjhnmiqTjTs5bddo6DRrXs');
+      background-image: url('https://raw.githubusercontent.com/Tsukishima358358/ABC-/baca0bb703a5a261209d6fcd14f0b65173d6a51a/Instagram%E3%81%AE%E6%8A%95%E7%A8%BF.png');
       background-size: cover;
       background-position: center;
       margin: 0;
@@ -15,19 +15,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh; /* 高さをmin-heightに変更 */
-      text-align: center;
-      font-family: Arial, sans-serif;
-      color: white;
+      height: 100vh;
+      text-align: center; /* テキストを中央揃えにする */
     }
 
     h1, p {
       margin: 0;
       padding: 10px;
-    }
-
-    p {
-      font-size: 1.2em;
+      color: white; /* テキストの色を白に設定 */
     }
 
     iframe {
@@ -40,20 +35,12 @@
     }
 
     @media screen and (max-width: 640px) {
-      p {
-        font-size: 1em;
-      }
-
       iframe {
         height: 600px;
       }
     }
 
     @media screen and (max-width: 480px) {
-      p {
-        font-size: 0.9em;
-      }
-
       iframe {
         height: 500px;
       }
@@ -77,6 +64,9 @@
 <body>
   <h1>プレゼント残り数</h1>
   <p id="remainingSlots">残りのプレゼント数を取得中...</p>
+  
+  <!-- 画像を挿入します -->
+  <img src="https://your-actual-image-url.com/path/to/your-image.jpg" alt="" style="width:100%; height:auto;">
 
   <!-- Googleフォームを埋め込みます -->
   <iframe src="https://forms.gle/1Ugw3AL5Tj3ccj1V6"></iframe>
