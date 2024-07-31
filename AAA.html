@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>プレゼント残り数</title>
+  <style>
+    body {
+      background-image: url('https://drive.google.com/uc?export=view&id=11kGzR5Y9rjQjhnmiqTjTs5bddo6DRrXs');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+    }
+  </style>
+  <script>
+    async function fetchRemainingSlots() {
+      try {
+        const response = await fetch('https://example.com/api/remaining-slots'); // APIのエンドポイントを指定してください
+        const remainingSlots = await response.text();
+        document.getElementById('remainingSlots').innerText = `残り ${remainingSlots} 個のプレゼントがあります！`;
+      } catch (error) {
+        console.error('Error fetching remaining slots:', error);
+      }
+    }
+
+    window.onload = fetchRemainingSlots;
+  </script>
+</head>
+<body>
+  <h1>プレゼント残り数</h1>
+  <p id="remainingSlots">残りのプレゼント数を取得中...</p>
+  
+  <!-- Googleフォームを埋め込みます -->
+  <iframe src="https://forms.gle/1Ugw3AL5Tj3ccj1V6" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
+</body>
+</html>
