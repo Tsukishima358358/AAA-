@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プレゼント残り数</title>
   <style>
     body {
@@ -16,45 +15,21 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      text-align: center; /* テキストを中央揃えにする */
-    }
-
-    h1, p {
-      margin: 0;
-      padding: 10px;
-      color: white; /* テキストの色を白に設定 */
     }
 
     iframe {
       display: block;
       margin: 20px auto;
-      width: 100%;
-      max-width: 640px;
-      height: 800px;
-      border: none;
-    }
-
-    @media screen and (max-width: 640px) {
-      iframe {
-        height: 600px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      iframe {
-        height: 500px;
-      }
     }
   </style>
   <script>
     async function fetchRemainingSlots() {
       try {
-        const response = await fetch('https://example.com/api/remaining-slots'); // APIのエンドポイントを指定してください
+        const response = await fetch('https://drive.google.com/open?id=11kGzR5Y9rjQjhnmiqTjTs5bddo6DRrXs&usp=drive_fs');
         const remainingSlots = await response.text();
         document.getElementById('remainingSlots').innerText = `残り ${remainingSlots} 個のプレゼントがあります！`;
       } catch (error) {
         console.error('Error fetching remaining slots:', error);
-        document.getElementById('remainingSlots').innerText = '残りのプレゼント数を取得できませんでした。';
       }
     }
 
@@ -66,9 +41,10 @@
   <p id="remainingSlots">残りのプレゼント数を取得中...</p>
   
   <!-- 画像を挿入します -->
-  <img src="https://your-actual-image-url.com/path/to/your-image.jpg" alt="" style="width:100%; height:auto;">
+  <img src="https://your-actual-image-url.com/path/to/your-image.jpg" style="width:100%; height:auto;">
 
   <!-- Googleフォームを埋め込みます -->
-  <iframe src="https://forms.gle/1Ugw3AL5Tj3ccj1V6"></iframe>
+  <iframe src="https://forms.gle/1Ugw3AL5Tj3ccj1V6" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
 </body>
 </html>
+
